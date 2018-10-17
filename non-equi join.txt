@@ -1,0 +1,18 @@
+Non-Equi Aggregation= CALCULATE(            
+        SUMX(Base_Table,Field_to_Sum),
+        FILTER(
+            Base_Table,
+            EndTimeField_Second_Table>EndTimeField_Base_Table
+            && Person_Second_Table = Person_Base_Table
+            && StartDate_Second_Table = StartDate_Base_Table
+            && StartTimeField_Second_Table < StartTimeField_Base_Table
+        )
+        )
+
+This function will sum up all the values that follow the conditions:
+ -Person/Unique ID in table 1 = Person/Unique ID in table 2
+ -Start Time is greater in table 2 than table 1
+ -End Time is less in table 2 than table 1
+ -The date in table 1 = the date in table 2
+
+Additional conditions can be set using '&&'
