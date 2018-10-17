@@ -1,0 +1,11 @@
+For reports and dashboards to be updated hourly or daily, a dynamic value is often required based on the changing dates.
+The 'DATESBETWEEN' function will act as a filter and only return values that pass the criteria. 
+Using 'MAX' date rather than 'TODAY' is important in the case of there being an error or lack of data for today. In that case,
+Power BI would simply pull the previous day in that case.
+
+Ex.
+Measure (7 Days Back - Max Date) = CALCULATE(field,DATESBETWEEN(date_field, MAX(date_field)-6,MAX(date_field)))
+Measure (13 Days Back - 8 Days Back) = CALCULATE(field,DATESBETWEEN(date_field, MAX(date_field)-13,MAX(date_field)-7))
+
+Using these multiple measures, we can now evaluate the deviation week to week (or whatever date range is set)
+Measure (7 Days Back - Max Date)/Measure (13 Days Back - 8 Days Back) = Change From Last Week
