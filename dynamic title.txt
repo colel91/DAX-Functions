@@ -1,0 +1,4 @@
+Dynamic Title = "fill text here" & CONCATENATEX(values(field),field,", ")
+
+This function will show all currently selected values for the given field based on the filters applied. Replace 'fill text here' with static text.
+If multiple values are selected, the values will be seperated by a comma and a space.
