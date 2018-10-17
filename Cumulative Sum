@@ -1,0 +1,5 @@
+Cumulative Sum = CALCULATE(SUM(field),FILTER(ALL(table),id_field=EARLIER(id_field) 
+&& date_field = EARLIER(date_field)))
+
+This function will take the whole table context into account using the 'ALL' function.
+The 'EARLIER' function compares the current row vs. previous rows matching the conditions.
