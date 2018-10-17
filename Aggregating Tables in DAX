@@ -1,0 +1,7 @@
+While generally ideal to aggregate/group data in 'M', sometimes this is not possible as you have created a calculated column that used DAX.
+This will not be shown when inside of the query editor. The solution to this is to create a DAX table through the 'SUMMARIZE' function. 
+
+
+Aggregated Table = SUMMARIZE(table,field1,field2,field3,fieldX,"Aggregate1title",COUNT(field_n),"Aggregate2title",
+MIN(field_n1),"Aggregate3title",MAX(field_n2)) 
+
